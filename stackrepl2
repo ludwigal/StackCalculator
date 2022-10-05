@@ -1,0 +1,10 @@
+def eval_expr(expr: str):
+    try:
+        if len(expr) == 0:
+            return nan
+        postfix_tokens = infix_to_postfix(expr)
+        #print(postfix_tokens)
+        return eval_postfix(postfix_tokens)
+    except missingoperand:
+        return MISSING_OPERAND
+    #except Exception()
